@@ -11,8 +11,16 @@ app.listen(port, () => {
 });
 
 const Produto = [
-  {id: 1, nome:"Notebook", preco: 6700},
-  {id: 2, nome:"Mouse", preco: 120} 
+  {
+    id: 1, 
+    nome:"Notebook", 
+    preco: 6700 
+  },
+  {
+    id: 2, 
+    nome:"Mouse", 
+    preco: 120
+  } 
 ]
 
 app.get("/produto",(req, res)=>{
