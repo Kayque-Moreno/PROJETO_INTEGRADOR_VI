@@ -1,28 +1,8 @@
 const express = require('express');
+const produtoRoutes = require("./routes/produto.routes");
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Olá, mundo!');
-});
+app.use(express.json());
+app.use("/produtos", produtoRoutes);
 
-app.listen(port, () => {
-  console.log('Servidor rodando na porta 3000');
-});
-
-const Produto = [
-  {
-    id: 1, 
-    nome:"Notebook", 
-    preco: 6700 
-  },
-  {
-    id: 2, 
-    nome:"Mouse", 
-    preco: 120
-  } 
-]
-
-app.get("/produto",(req, res)=>{
-  res.status(200).json(Produto);
-});
+app.listen(3000);
